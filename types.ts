@@ -6,6 +6,8 @@ export interface SmartTypographySettings {
   guillemets: boolean;
   comparisons: boolean;
   fractions: boolean;
+  superscripts: boolean;
+  subscripts: boolean;
   skipEnDash: boolean;
 
   openSingle: string;

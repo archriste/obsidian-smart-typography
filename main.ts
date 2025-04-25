@@ -17,6 +17,8 @@ import {
   fractionRules,
   guillemetRules,
   smartQuoteRules,
+  superscriptRules,
+  subscriptRules,
 } from "inputRules";
 import {
   LegacyInputRule,
@@ -41,6 +43,8 @@ const DEFAULT_SETTINGS: SmartTypographySettings = {
   fractions: false,
   guillemets: false,
   skipEnDash: false,
+  superscripts: false,
+  subscripts: false,
 
   openSingle: "‘",
   closeSingle: "’",
@@ -105,6 +109,14 @@ export default class SmartTypography extends Plugin {
 
     if (this.settings.fractions) {
       this.inputRules.push(...fractionRules);
+    }
+
+    if (this.settings.superscripts) {
+      this.inputRules.push(...superscriptRules);
+    }
+
+    if (this.settings.subscripts) {
+      this.inputRules.push(...subscriptRules);
     }
 
     this.inputRules.forEach((rule) => {
@@ -609,6 +621,34 @@ class SmartTypographySettingTab extends PluginSettingTab {
             await this.plugin.saveSettings();
           });
       });
+
+      new Setting(containerEl)
+        .setName("Superscripts")
+        .setDesc(
+          "R^2 will be converted to R². Supports UTF-8 superscripts for numbers 0-9, +, -, =, and 'n'."
+        )
+        .addToggle((toggle) => {
+          toggle
+            .setValue(this.plugin.settings.superscripts)
+            .onChange(async (value) => {
+              this.plugin.settings.superscripts = value;
+              await this.plugin.saveSettings();
+            });
+        });
+
+        new Setting(containerEl)
+          .setName("Subscripts")
+          .setDesc(
+            "H_2 will be converted to H₂. Supported UTF-8 subscripts for numbers 0-9, +, -, =, and 'n'."
+          )
+          .addToggle((toggle) => {
+            toggle
+              .setValue(this.plugin.settings.subscripts)
+              .onChange(async (value) => {
+                this.plugin.settings.subscripts = value;
+                await this.plugin.saveSettings();
+              });
+          });
   }
 }
 

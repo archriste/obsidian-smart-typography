@@ -270,3 +270,179 @@ export const fractionRules: InputRule[] = [
     contextMatch: /(?:^|\s)1\/1$/,
   },
 ];
+
+// Superscripts
+export const superscriptRules: InputRule[] = [
+  {
+    trigger: "0",
+    from: "^0",
+    to: "⁰",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "1",
+    from: "^1",
+    to: "¹",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "2",
+    from: "^2",
+    to: "²",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "3",
+    from: "^3",
+    to: "³",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "4",
+    from: "^4",
+    to: "⁴",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "5",
+    from: "^5",
+    to: "⁵",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "6",
+    from: "^6",
+    to: "⁶",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "7",
+    from: "^7",
+    to: "⁷",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "8",
+    from: "^8",
+    to: "⁸",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "9",
+    from: "^9",
+    to: "⁹",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "+",
+    from: "^+",
+    to: "⁺",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "-",
+    from: "^-",
+    to: "⁻",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "=",
+    from: "^=",
+    to: "⁼",
+    contextMatch: /\^$/,
+  },
+  {
+    trigger: "n",
+    from: "^n",
+    to: "ⁿ",
+    contextMatch: /\^$/,
+  },
+];
+
+// Subscripts
+export const subscriptRules: InputRule[] = [
+  {
+    trigger: "0",
+    from: "_0",
+    to: "₀",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "1",
+    from: "_1",
+    to: "₁",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "2",
+    from: "_2",
+    to: "₂",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "3",
+    from: "_3",
+    to: "₃",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "4",
+    from: "_4",
+    to: "₄",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "5",
+    from: "_5",
+    to: "₅",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "6",
+    from: "_6",
+    to: "₆",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "7",
+    from: "_7",
+    to: "₇",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "8",
+    from: "_8",
+    to: "₈",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "9",
+    from: "_9",
+    to: "₉",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "+",
+    from: "_+",
+    to: "₊",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "-",
+    from: "_-",
+    to: "₋",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "=",
+    from: "_=",
+    to: "₌",
+    contextMatch: /_$/,
+  },
+  {
+    trigger: "n",
+    from: "_n",
+    to: "ₙ",
+    contextMatch: /_$/,
+  },
+];
